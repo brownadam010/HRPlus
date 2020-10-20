@@ -2,7 +2,7 @@ package com.hrplus.model;
 
 public class FinanceEmp {
 
-	private String id;
+	private int id;
 	private String name;
 	private String salary;
 	private String vacaAvailable;
@@ -14,7 +14,7 @@ public class FinanceEmp {
 
 	}
 
-	public FinanceEmp(String id, String name, String salary, String vacaAvailable, String vacaTaken, String vacaLeft,
+	public FinanceEmp(int id, String name, String salary, String vacaAvailable, String vacaTaken, String vacaLeft,
 			String investments) {
 		this.id = id;
 		this.name = name;
@@ -25,11 +25,11 @@ public class FinanceEmp {
 		this.investments = investments;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
