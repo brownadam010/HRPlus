@@ -5,15 +5,24 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hrplus.model.Employee;
 import com.hrplus.model.FinanceEmp;
 import com.hrplus.model.HREmp;
 import com.hrplus.model.MarketingEmp;
 import com.hrplus.model.ProdDevEmp;
+import com.hrplus.service.IEmployeeService;
+
+/**
+ * Handle /Employee endpoint
+ * @author Administrator
+ *
+ */
 
 @Controller
 @RequestMapping("/Employee")
@@ -23,6 +32,11 @@ public class EmployeeController {
 	private List<HREmp> HR;
 	private List<MarketingEmp> Marketing;
 	private List<ProdDevEmp> ProdDev;
+	
+	private List<Employee> Employees = new ArrayList<>(); 
+	
+	@Autowired
+	private IEmployeeService employeeServiceStub; 
 
 	@PostConstruct
 	private void LoadData() {
@@ -89,11 +103,14 @@ public class EmployeeController {
 
 	}
 
-	// Mapping for /Finance
+	
 	@GetMapping("/Finance")
 	public String listFinance(Model finModel) {
-
-		finModel.addAttribute("Finance", Finance);
+		
+		//finModel.addAttribute("Finance", Finance);
+		
+		Employees = employeeServiceStub.fetchByEmpType("Finance"); 
+		finModel.addAttribute("Finance", Employees); 
 
 		return "list-Finance";
 	}
