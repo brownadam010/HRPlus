@@ -10,9 +10,6 @@ public class MarketingEmp {
 	private String vacaLeft;
 	private String investments;
 	
-	public MarketingEmp() {
-		
-	}
 
 	public MarketingEmp(int id, String name, String salary, String vacaAvailable, String vacaTaken, String vacaLeft,
 			String investments) {

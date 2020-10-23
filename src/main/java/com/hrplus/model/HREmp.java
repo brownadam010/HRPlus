@@ -10,10 +10,7 @@ public class HREmp {
 	private String vacaLeft;
 	private String investments;
 	
-	public HREmp() {
-		
-	}
-
+	
 	public HREmp(int id, String name, String salary, String vacaAvailable, String vacaTaken, String vacaLeft,
 			String investments) {
 		this.id = id;

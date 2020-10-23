@@ -26,8 +26,11 @@ public class EmployeeController {
 
 	@PostConstruct
 	private void LoadData() {
-
+		
 		// Create Finance Dept
+		
+		//fin1 can be financeEmp1 just for better understanding same for all other
+		
 		FinanceEmp fin1 = new FinanceEmp(1, "Adam Brown", "$100,000", "21", "6", "15", "$230,000");
 		FinanceEmp fin2 = new FinanceEmp(2, "Tiffany Litteral", "$120,000", "21", "6", "15", "$300,000");
 		FinanceEmp fin3 = new FinanceEmp(3, "Jacob Difrank", "$130,000", "21", "6", "15", "$350,000");
@@ -43,6 +46,7 @@ public class EmployeeController {
 		Finance.add(fin4);
 
 		// Create Marketing Dept
+		// mark1 can be markEmp1 for better understanding and same for all other
 		MarketingEmp mark1 = new MarketingEmp(1, "Tiffany Litteral", "$250,000", "21", "6", "15", "$400,000");
 		MarketingEmp mark2 = new MarketingEmp(2, "Jacob Difrank", "$300,000", "21", "6", "15", "$290,000");
 		MarketingEmp mark3 = new MarketingEmp(3, "Alen Anand", "$200,000", "21", "6", "15", "$360,000");
@@ -58,6 +62,7 @@ public class EmployeeController {
 		Marketing.add(mark4);
 
 		// Create HR Dept
+		//hr1 can be humanResEmp1 for better understanding and same for all other
 		HREmp hr1 = new HREmp(1, "Jacob Difrank", "$120,000", "21", "6", "15", "$690,000");
 		HREmp hr2 = new HREmp(2, "Alen Anand", "$500,000", "21", "6", "15", "$560,000");
 		HREmp hr3 = new HREmp(3, "Adam Brown", "$370,000", "21", "6", "15", "$340,000");
@@ -73,6 +78,7 @@ public class EmployeeController {
 		HR.add(hr4);
 
 		// Create Product Development Dept
+		//pd1 can be prodDevEmp1 for better understanding and same for all other
 		ProdDevEmp pd1 = new ProdDevEmp(1, "Alen Anand", "$600,000", "21", "6", "15", "$700,000");
 		ProdDevEmp pd2 = new ProdDevEmp(2, "Adam Brown", "$400,000", "21", "6", "15", "$540,000");
 		ProdDevEmp pd3 = new ProdDevEmp(3, "Tiffany Litteral", "$540,000", "21", "6", "15", "$800,000");
