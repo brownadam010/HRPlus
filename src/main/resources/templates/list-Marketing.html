@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-	crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
 
-<title>Marketing</title>
-</head>
-<body>
-	<div class="container">
-		<h4>HR Data for Marketing</h4>
-		<hr>
-		<table class="table table-bordered">
-			<thead>
-				<tr class="bg-danger">
-					<th>Name</th>
-					<th>Salary</th>
-					<th>Vacation Days Total</th>
-					<th>Vacation Taken</th>
-					<th>Vacation Left</th>
-					<th>401k Total</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="Marketing : ${Marketing}">
-					<td th:text="${Marketing.name}" />
-					<td th:text="${Marketing.salary}" />
-					<td th:text="${Marketing.vacaAvailable}" />
-					<td th:text="${Marketing.vacaTaken}" />
-					<td th:text="${Marketing.vacaLeft}" />
-					<td th:text="${Marketing.investments}" />
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</body>
+    <title>Marketing</title>
+  </head>
+  <body>
+    <div class="container">
+      <h4>HR Data for Marketing</h4>
+      <hr />
+      <table class="table table-bordered">
+        <thead>
+          <tr class="bg-danger">
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Vacation Days Total</th>
+            <th>Vacation Taken</th>
+            <th>Vacation Left</th>
+            <th>401k Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="marketingEmployee : ${Marketing}">
+            <td th:text="${marketingEmployee.name}" />
+            <td th:text="${marketingEmployee.salary}" />
+            <td th:text="${marketingEmployee.vacaAvailable}" />
+            <td th:text="${marketingEmployee.vacaTaken}" />
+            <td th:text="${marketingEmployee.vacaLeft}" />
+            <td th:text="${marketingEmployee.investments}" />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>
