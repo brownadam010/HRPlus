@@ -20,7 +20,7 @@ import com.hrplus.service.MarketingService;
 import com.hrplus.service.ProdDevService;
 
 @Controller
-@RequestMapping("/Employee")
+//Removed @RequestMapping, makes routing more complex in my opinion
 public class EmployeeController {
 
 	public HRService hrService;
@@ -35,6 +35,12 @@ public class EmployeeController {
 		prodDevService = theProdDevService;
 	}
 
+	//Added route for homepage 
+	@RequestMapping("/")
+	public String start() { 
+		return "index";
+	}
+	
 	// Mapping for /Finance
 	@GetMapping("/Finance")
 	public String listFinance(Model finModel) {
