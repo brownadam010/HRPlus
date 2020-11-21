@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hrplus.entity.FinanceEmp;
 import com.hrplus.entity.HREmp;
@@ -83,4 +86,48 @@ public class EmployeeController {
 
 		return "prodDev/list-ProdDev";
 	}
+	
+	@GetMapping("/delete") 
+	public String delete(@RequestParam("financeId") int theId) {
+		
+		//Remove faculty
+		financeService.deleteById(theId);
+		
+		//Return to the faculties
+		return "redirect:/Employee/Finance";
+	}
+	
+	@GetMapping("/delete1") 
+	public String delete1(@RequestParam("hrId") int theId) {
+		
+		//Remove faculty
+		hrService.deleteById(theId);
+		
+		//Return to the faculties
+		return "redirect:/Employee/HR";
+	}
+	
+	@GetMapping("/delete2") 
+	public String delete2(@RequestParam("marketingId") int theId) {
+		
+		//Remove faculty
+		marketingService.deleteById(theId);
+		
+		//Return to the faculties
+		return "redirect:/Employee/Marketing";
+	}
+	
+	
+	@GetMapping("/delete3") 
+	public String delete3(@RequestParam("prodDevId") int theId) {
+		
+		//Remove faculty
+		prodDevService.deleteById(theId);
+		
+		//Return to the faculties
+		return "redirect:/Employee/ProdDev";
+	}
+	
+	
+	
 }

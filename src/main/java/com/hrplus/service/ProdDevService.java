@@ -8,9 +8,9 @@ public interface ProdDevService {
 
 	public List<ProdDevEmp> findAll();
 
-	// public ProdDevEmp findById(int theId);
+	public ProdDevEmp findById(int theId);
 
 	public void save(ProdDevEmp theFaculty);
 
-	// public void deleteById(int theId);
+	public void deleteById(int theId);
 }

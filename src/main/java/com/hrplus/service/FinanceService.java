@@ -8,9 +8,9 @@ public interface FinanceService {
 
 	public List<FinanceEmp> findAll();
 
-	// public FinanceEmp findById(int theId);
+	 public FinanceEmp findById(int theId);
 
 	public void save(FinanceEmp theFaculty);
 
-	// public void deleteById(int theId);
+	public void deleteById(int theId);
 }

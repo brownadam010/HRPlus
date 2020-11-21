@@ -8,9 +8,9 @@ public interface MarketingService {
 
 	public List<MarketingEmp> findAll();
 
-	// public MarketingEmp findById(int theId);
+	public MarketingEmp findById(int theId);
 
 	public void save(MarketingEmp theFaculty);
 
-	// public void deleteById(int theId);
+	public void deleteById(int theId);
 }
