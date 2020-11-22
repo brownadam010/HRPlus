@@ -14,7 +14,6 @@ public class HREmp {
 	//Set the fields	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	@Column(name="id")
 	private int id;
 	
