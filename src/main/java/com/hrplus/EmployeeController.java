@@ -35,6 +35,11 @@ public class EmployeeController {
 		prodDevService = theProdDevService;
 	}
 
+	@RequestMapping("/Contact")
+	public String contact() {
+		return "/Contact";
+	}
+	
 	// Mapping for /Finance
 	@GetMapping("/Finance")
 	public String listFinance(Model finModel) {
