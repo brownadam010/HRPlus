@@ -87,8 +87,8 @@ public class EmployeeController {
 		return "prodDev/list-ProdDev";
 	}
 	
-	@GetMapping("/delete") 
-	public String delete(@RequestParam("financeId") int theId) {
+	@GetMapping("/deleteFinance") 
+	public String deleteFinance(@RequestParam("financeId") int theId) {
 		
 		//Remove faculty
 		financeService.deleteById(theId);
@@ -97,8 +97,8 @@ public class EmployeeController {
 		return "redirect:/Employee/Finance";
 	}
 	
-	@GetMapping("/delete1") 
-	public String delete1(@RequestParam("hrId") int theId) {
+	@GetMapping("/deleteHr") 
+	public String deleteHr(@RequestParam("hrId") int theId) {
 		
 		//Remove faculty
 		hrService.deleteById(theId);
@@ -107,8 +107,8 @@ public class EmployeeController {
 		return "redirect:/Employee/HR";
 	}
 	
-	@GetMapping("/delete2") 
-	public String delete2(@RequestParam("marketingId") int theId) {
+	@GetMapping("/deleteMarketing") 
+	public String deleteMarketing(@RequestParam("marketingId") int theId) {
 		
 		//Remove faculty
 		marketingService.deleteById(theId);
@@ -118,8 +118,8 @@ public class EmployeeController {
 	}
 	
 	
-	@GetMapping("/delete3") 
-	public String delete3(@RequestParam("prodDevId") int theId) {
+	@GetMapping("/deleteProdDev") 
+	public String deleteProdDev(@RequestParam("prodDevId") int theId) {
 		
 		//Remove faculty
 		prodDevService.deleteById(theId);
