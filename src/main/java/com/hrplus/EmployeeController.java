@@ -19,6 +19,8 @@ import com.hrplus.service.HRService;
 import com.hrplus.service.MarketingService;
 import com.hrplus.service.ProdDevService;
 
+
+
 @Controller
 @RequestMapping("/Employee")
 public class EmployeeController {
@@ -128,6 +130,144 @@ public class EmployeeController {
 		return "redirect:/Employee/ProdDev";
 	}
 	
+	@GetMapping("/viewAddFinance")
+	public String viewAddForm(Model finModel) {
+		
+		//Model attribute for data binding
+		
+		FinanceEmp theFinance = new FinanceEmp();
+		
+		finModel.addAttribute("finance", theFinance);
+		
+		return "finance/finance-form";
+	}
 	
+	@GetMapping("/viewAddHR")
+	public String viewAddFormHR(Model hrModel) {
+		
+		//Model attribute for data binding
+		
+		HREmp theHR = new HREmp();
+		
+		hrModel.addAttribute("hr", theHR);
+		
+		return "hr/hr-form";
+	}
+	
+	@GetMapping("/viewAddMark")
+	public String viewAddFormMark(Model markModel) {
+		
+		//Model attribute for data binding
+		
+		MarketingEmp theMarketing = new MarketingEmp();
+		
+		markModel.addAttribute("marketing", theMarketing);
+		
+		return "marketing/marketing-form";
+	}
+	
+	@GetMapping("/viewAddProdDev")
+	public String viewAddFormProdDev(Model prodDevModel) {
+		
+		//Model attribute for data binding
+		
+		ProdDevEmp theProdDev = new ProdDevEmp();
+		
+		prodDevModel.addAttribute("prodDev", theProdDev);
+		
+		return "prodDev/proddev-form";
+	}
+	
+	@PostMapping("/saveFin")
+	public String saveFinance(@ModelAttribute("finance")FinanceEmp theFinance) {
+		
+		//Register the faculty that has been entered
+		financeService.save(theFinance);
+		
+		//Block duplicate submissions
+		return "redirect:/Employee/Finance";
+	}
+	
+	@PostMapping("/saveHR")
+	public String saveHR(@ModelAttribute("hr")HREmp theHR) {
+		
+		//Register the faculty that has been entered
+		hrService.save(theHR);
+		
+		//Block duplicate submissions
+		return "redirect:/Employee/HR";
+	}
+	
+	@PostMapping("/saveMark")
+	public String saveMark(@ModelAttribute("marketing")MarketingEmp theMarketing) {
+		
+		//Register the faculty that has been entered
+		marketingService.save(theMarketing);
+		
+		//Block duplicate submissions
+		return "redirect:/Employee/Marketing";
+	}
+
+	@PostMapping("/saveProdDev")
+	public String saveProdDev(@ModelAttribute("proddev")ProdDevEmp theProdDev) {
+		
+		//Register the faculty that has been entered
+		prodDevService.save(theProdDev);
+		
+		//Block duplicate submissions
+		return "redirect:/Employee/ProdDev";
+	}
+	
+	@GetMapping("/viewUpdateFinance")
+	public String viewUpdateFinance(@RequestParam("financeId")int theId, Model finModel) {
+		
+		//Retrieve the Faculty Info from the service layer
+		FinanceEmp theFinance = financeService.findById(theId);
+		
+		//Pre populate the form by setting the faculty as a model attribute
+		finModel.addAttribute("finance", theFinance);
+		
+		//Redirect to the Faculty Form
+		return "finance/finance-form";
+	}
+	
+	@GetMapping("/viewUpdateHR")
+	public String viewUpdateHR(@RequestParam("hrId")int theId, Model hrModel) {
+		
+		//Retrieve the Faculty Info from the service layer
+		HREmp theHR = hrService.findById(theId);
+		
+		//Pre populate the form by setting the faculty as a model attribute
+		hrModel.addAttribute("hr", theHR);
+		
+		//Redirect to the Faculty Form
+		return "hr/hr-form";
+	}
+	
+	@GetMapping("/viewUpdateMark")
+	public String viewUpdateMark(@RequestParam("marketingId")int theId, Model markModel) {
+		
+		//Retrieve the Faculty Info from the service layer
+		MarketingEmp theMarketing = marketingService.findById(theId);
+		
+		//Pre populate the form by setting the faculty as a model attribute
+		markModel.addAttribute("marketing", theMarketing);
+		
+		//Redirect to the Faculty Form
+		return "marketing/marketing-form";
+	}
+	
+	@GetMapping("/viewUpdateProdDev")
+	public String viewUpdateProdDev(@RequestParam("prodDevId")int theId, Model prodDevModel) {
+		
+		//Retrieve the Faculty Info from the service layer
+		ProdDevEmp theProdDev = prodDevService.findById(theId);
+		
+		//Pre populate the form by setting the faculty as a model attribute
+		prodDevModel.addAttribute("prodDev", theProdDev);
+		
+		//Redirect to the Faculty Form
+		return "prodDev/proddev-form";
+	}
 	
 }
