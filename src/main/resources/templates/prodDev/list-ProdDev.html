@@ -18,6 +18,11 @@
 	<div class="container">
 		<h4>HR Data for Product Development</h4>
 		<hr>
+		
+				<!-- Create a button to add entries -->		
+		<a th:href="@{/Employee/viewAddProdDev}" class="btn btn-dark btn-sm mb-2">Add New Faculty Here</a>
+		
+		
 		<table class="table table-bordered">
 			<thead>
 				<tr class="bg-danger">
@@ -44,6 +49,11 @@
 					
 					
 					<td>
+					
+										<!-- Update Button -->
+						<a th:href="@{/Employee/viewUpdateProdDev(prodDevId=${ProdDev.id})}"
+						class="btn btn-danger btn-sm"> Update </a>
+					
 					<!-- Delete Button -->
 						<a th:href="@{/Employee/delete3(prodDevId=${ProdDev.id})}"
 						class="btn btn-danger btn-sm" 

@@ -72,7 +72,7 @@ public class ProdDevEmp {
 	}
 
 	public String getLastName() {
-		return firstName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
