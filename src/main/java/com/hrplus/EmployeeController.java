@@ -102,7 +102,7 @@ public class EmployeeController {
 		financeService.deleteById(theId);
 		
 		//Return to the faculties
-		return "redirect:/Employee/Finance";
+		return "redirect:/Finance";
 	}
 	
 	@GetMapping("/delete1") 
@@ -112,7 +112,7 @@ public class EmployeeController {
 		hrService.deleteById(theId);
 		
 		//Return to the faculties
-		return "redirect:/Employee/HR";
+		return "redirect:/HR";
 	}
 	
 	@GetMapping("/delete2") 
@@ -122,7 +122,7 @@ public class EmployeeController {
 		marketingService.deleteById(theId);
 		
 		//Return to the faculties
-		return "redirect:/Employee/Marketing";
+		return "redirect:/Marketing";
 	}
 	
 	
@@ -133,7 +133,7 @@ public class EmployeeController {
 		prodDevService.deleteById(theId);
 		
 		//Return to the faculties
-		return "redirect:/Employee/ProdDev";
+		return "redirect:/ProdDev";
 	}
 	
 	@GetMapping("/viewAddFinance")
@@ -191,7 +191,7 @@ public class EmployeeController {
 		financeService.save(theFinance);
 		
 		//Block duplicate submissions
-		return "redirect:/Employee/Finance";
+		return "redirect:/Finance";
 	}
 	
 	@PostMapping("/saveHR")
@@ -201,7 +201,7 @@ public class EmployeeController {
 		hrService.save(theHR);
 		
 		//Block duplicate submissions
-		return "redirect:/Employee/HR";
+		return "redirect:/HR";
 	}
 	
 	@PostMapping("/saveMark")
@@ -211,7 +211,7 @@ public class EmployeeController {
 		marketingService.save(theMarketing);
 		
 		//Block duplicate submissions
-		return "redirect:/Employee/Marketing";
+		return "redirect:/Marketing";
 	}
 
 	@PostMapping("/saveProdDev")
@@ -221,7 +221,7 @@ public class EmployeeController {
 		prodDevService.save(theProdDev);
 		
 		//Block duplicate submissions
-		return "redirect:/Employee/ProdDev";
+		return "redirect:/ProdDev";
 	}
 	
 	@GetMapping("/viewUpdateFinance")

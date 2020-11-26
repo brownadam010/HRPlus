@@ -22,12 +22,12 @@
 <div class="container">
 <h4> School of IT Directory </h4>
 <br>
-<a class="btn btn-danger" data-toggle="collapse" th:href="@{/Employee/HR}" role="button" aria-expanded="false" aria-controls="collapseExample">
+<a class="btn btn-danger" data-toggle="collapse" th:href="@{/HR}" role="button" aria-expanded="false" aria-controls="collapseExample">
     List of HR employees
 </a>
 <hr>
 <p class="h4 mb-4"> Register new employee under HR</p>
-<form action="#" th:action="@{/Employee/saveHR}" th:object="${hr}" method="POST">
+<form action="#" th:action="@{/saveHR}" th:object="${hr}" method="POST">
 
 <!-- Invisible Form as needed to update info -->
 <input type="hidden" th:field="*{id}"/>
